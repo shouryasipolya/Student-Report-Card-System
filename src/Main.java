@@ -9,7 +9,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // 🔹 Load subjects from DB at start
+        
         Student.subjects = DB.fetchSubjects();
 
         if (Student.subjects.isEmpty()) {

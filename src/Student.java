@@ -9,7 +9,7 @@ public class Student {
     int[] marks;
     static ArrayList<String> subjects = new ArrayList<>(); // Dynamic subjects
 
-    // Input student details
+
     public void inputDetails(Scanner sc) {
         System.out.print("Enter Roll No: ");
         rollNo = sc.nextInt();

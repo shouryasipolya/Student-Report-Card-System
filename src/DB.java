@@ -155,7 +155,7 @@ public class DB {
         return students;
     }
 
-    // Delete student
+
     public static void deleteStudent(int rollNo) {
         String sql = "DELETE FROM students WHERE rollNo=?";
         try (Connection conn = getConnection();
