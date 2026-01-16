@@ -6,13 +6,11 @@ public class Student {
     int total;
     double percentage;
     char grade;
-    int[] marks = new int[5];
-    static String[] subjects = new String[5]; // Subject names decided by teacher
+    int[] marks;
+    static ArrayList<String> subjects = new ArrayList<>(); // Dynamic subjects
 
     // Input student details
-    public void inputDetails() {
-        Scanner sc = new Scanner(System.in);
-
+    public void inputDetails(Scanner sc) {
         System.out.print("Enter Roll No: ");
         rollNo = sc.nextInt();
         sc.nextLine();
@@ -20,11 +18,15 @@ public class Student {
         System.out.print("Enter Name: ");
         name = sc.nextLine();
 
+        // Initialize marks array based on number of subjects
+        marks = new int[subjects.size()];
+
         System.out.println("\nEnter Marks for the Following Subjects (out of 100):");
-        for (int i = 0; i < 5; i++) {
-            System.out.print(subjects[i] + ": ");
+        for (int i = 0; i < subjects.size(); i++) {
+            System.out.print(subjects.get(i) + ": ");
             marks[i] = sc.nextInt();
         }
+        sc.nextLine();
     }
 
     // Calculate total, percentage and grade
@@ -32,7 +34,7 @@ public class Student {
         total = 0;
         for (int mark : marks) total += mark;
 
-        percentage = total / 5.0;
+        percentage = total / (double) marks.length;
 
         if (percentage >= 90) grade = 'A';
         else if (percentage >= 80) grade = 'B';
@@ -48,8 +50,8 @@ public class Student {
         System.out.println("Name: " + name);
         System.out.println("-----------------------");
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println(subjects[i] + ": " + marks[i]);
+        for (int i = 0; i < marks.length; i++) {
+            System.out.println(subjects.get(i) + ": " + marks[i]);
         }
 
         System.out.println("Total: " + total);
