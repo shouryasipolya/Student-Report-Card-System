@@ -199,7 +199,7 @@ public class Main {
                         rank++;
                     }
                 }
-                case 4 -> { // Top Scorer per Subject
+                case 4 -> {
                     for (int i = 0; i < Student.subjects.size(); i++) {
                         Student top = null;
                         int max = -1;
