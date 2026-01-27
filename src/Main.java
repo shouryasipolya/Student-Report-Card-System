@@ -213,7 +213,7 @@ public class Main {
                             System.out.println("Top in " + Student.subjects.get(i) + ": " + top.name + " - " + max);
                     }
                 }
-                case 5 -> { // Class Average per Subject
+                case 5 -> {
                     System.out.println("\n--- Class Average per Subject ---");
                     for (int i = 0; i < Student.subjects.size(); i++) {
                         double sum = 0;
